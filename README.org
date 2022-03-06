@@ -40,7 +40,7 @@ Org mode exports a HTML validation link by default. There does not seem to be a
 way to disable the link by using =#+options:= in the Org file. Add the following
 to the Emacs init file to disable the generated HTML validation link.
 
-#+begin_src elisp
+#+begin_src emacs-lisp
   ;; HTML output: Don't emit validation link
   (setq org-html-validation-link nil)
 #+end_src
@@ -98,6 +98,6 @@ Opening of the book Solaris by Stanislaw Lem/
 
 ** Org Keywords and Tags
 *** TODO [#A] Do Laundry                                        :important:
-SCHEDULED: <2022-03-06 sön +1w>
+DEADLINE: <2022-03-06 sön +1w>
 *** DONE Cook Sunday Dinner
 CLOSED: [2022-03-06 sön 15:47]
