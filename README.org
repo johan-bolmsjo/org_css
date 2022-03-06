@@ -1,0 +1,87 @@
+#+title: Emacs Org mode CSS for HTML export
+#+options: toc:nil num:nil author:nil timestamp:nil ^:nil
+#+setupfile: inline.css.org
+
+A CSS file for [[https://orgmode.org/][Emacs Org mode]] HTML export that provides an easy to read style
+suitable for smaller documents.
+
+I've come to use Org mode for much of my work related planning and tracking
+progress on tasks. Sometimes I'm requested to provide a report by email at which
+time it's convenient to be able to export what is readily available in one of my
+Org files. I also write longer emails in Org mode as I think it's easier to
+create a decent structure.
+
+* CSS File Usage
+
+Use a block such as the following to specify document options and to inline the
+CSS file into the exported HTML file.
+
+#+begin_src org
+  ,#+options: toc:nil num:nil author:nil timestamp:nil ^:nil
+  ,#+setupfile: inline.css.org
+#+end_src
+
+I usually place the block after the Org document title. Export to HTML with the
+command =M-x org-html-export-to-html=.
+
+** Custom Font
+
+A custom serif font is used for body text as I think the default serif font
+used by web browsers is too dense. If you come to rely on this CSS file you are
+wise to provide your own font source. See file:org.css for details. The custom
+font can be found in file:fonts/Lora.
+
+** Disabling HTML Validation Link
+
+Org mode exports a HTML validation link by default. There does not seem to be a
+way to disable the link by using =#+options:= in the Org file. Add the following
+to the Emacs init file to disable the generated HTML validation link.
+
+#+begin_src elisp
+  ;; HTML output: Don't emit validation link
+  (setq org-html-validation-link nil)
+#+end_src
+
+* CSS File Modifications
+
+Edit the file file:org.css. Generate the file =inline.css.org= by running
+=make=. The [[https://yui.github.io/yuicompressor/][YUI Compressor]] program is used to compress the CSS to reduce the
+size of exported HTML files.
+
+Example (Debian based Linux):
+#+begin_src
+  sudo apt-get install yui-compressor
+  make
+#+end_src
+
+* Style Demonstration
+
+A style demonstration of typographical elements not already employed by this
+document.
+
+** Block Quotes
+#+begin_quote
+At 19.00 hours, ship's time, I made my way to the launching bay. The men around
+the shaft stood aside to let me pass, and I climbed down into the capsule. /--
+Opening of the book Solaris by Stanislaw Lem/
+#+end_quote
+
+** Lists
+*** Grocery list [1/3]
+- [X] Milk
+- [ ] Bread
+- [ ] Bananas
+
+** Tables
+#+CAPTION: Nutritional content per 100 g
+| Grocery   | kcal | Carbs (g) | Protein (g) | Fat (g) |
+|-----------+------+-----------+-------------+---------|
+| Banana    |   95 |      21.3 |         1.1 |     0.1 |
+| Milk (3%) |   60 |       4.7 |         3.5 |       3 |
+| Pasta     |  360 |      71.9 |        12.5 |     1.2 |
+
+** Org Keywords and Tags
+*** TODO [#A] Do Laundry                                        :important:
+SCHEDULED: <2022-03-06 sön +1w>
+*** DONE Cook Sunday Dinner
+CLOSED: [2022-03-06 sön 15:47]

@@ -1,0 +1,21 @@
+Lora font downloaded from https://fonts.google.com/specimen/Lora
+
+The directory mini/ contains versions of the fonts in [woff] format with some
+glyphs removed. The following Unicode ranges are removed from the fonts in the
+mini/ directory.
+
+- Latin Extended-A
+- Latin Extended-B
+- IPA Extensions
+- Space Modifier Letters
+- Combining Diacritical Marks
+- Cyrillic
+- Cyrillic Supplement
+- Cyrillic Extended-C
+- Latin Extended Additional
+
+Essentially what remains is a Latin-1 font with some math, currency and extra
+punctuation symbols.
+
+-----
+[woff]: https://developer.mozilla.org/en-US/docs/Web/Guide/WOFF

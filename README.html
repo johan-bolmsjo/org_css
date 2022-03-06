@@ -1,0 +1,394 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Emacs Org mode CSS for HTML export</title>
+<meta name="generator" content="Org Mode" />
+<style>
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+</style>
+<style type="text/css">
+:root{--color-black1:#0a0a0a;--color-black2:#333;--color-gray1:#777;--color-gray2:#ccc;--color-white1:#fafafa;--color-blue1:#0a0ad8;--color-purple1:#6e0ab9;--color-tag:#bbb;--color-headline:#375eab}@font-face{font-family:"Lora";src:local("Lora Regular"),url("http://bitmaster.se/fonts/Lora/Lora-Regular-Mini.woff") format("woff");font-style:normal;font-weight:normal}@font-face{font-family:"Lora";src:local("Lora Demi Bold"),url("http://bitmaster.se/fonts/Lora/Lora-SemiBold-Mini.woff") format("woff");font-style:normal;font-weight:bold}@font-face{font-family:"Lora";src:local("Lora Italic"),url("http://bitmaster.se/fonts/Lora/Lora-Italic-Mini.woff") format("woff");font-style:italic;font-weight:normal}@font-face{font-family:"Lora";src:local("Lora Demi Bold Italic"),url("http://bitmaster.se/fonts/Lora/Lora-SemiBoldItalic-Mini.woff") format("woff");font-style:italic;font-weight:bold}html{line-height:140%;-webkit-text-size-adjust:100%}body{font-family:Lora,serif;font-size:17px;margin-left:2em;max-width:48em;color:var(--color-black1)}@media(pointer:coarse){body{margin-left:0}}h1{font:200% sans-serif}h2{font:180% sans-serif}h3{font:150% sans-serif}h4{font:125% sans-serif}h5{font:110% sans-serif}h1,h2,h3,h4,h5{margin-top:1em;margin-bottom:.5em;color:var(--color-headline)}h2{padding-top:.5rem;border-top:2px dotted var(--color-gray2)}blockquote{border-left:5px solid var(--color-gray2);margin:1em 1.5em;padding-left:1em}tt,code,pre{font-family:monospace,monospace;font-size:90%}pre{margin-left:0;border:1px solid var(--color-gray2);border-radius:3px;background-color:var(--color-white1);padding:8pt;overflow:auto;margin:0}pre.src{position:relative;overflow:auto}pre.src:before{display:block;position:absolute;top:0;right:0;padding:0 .5em;border-bottom-left-radius:8px;border:0;color:var(--color-white1);background-color:var(--color-tag)}pre.src:hover:before{margin-top:0}li:not(:last-child){margin-bottom:.2em}hr{border:0;height:1px;background-color:var(--color-black2);margin-top:1.5em}a{border:0;outline:0;color:var(--color-blue1);text-decoration:none}a:visited{color:var(--color-purple1)}a:hover{border-bottom:2px dotted}table{margin:1em;border-top:1.5px solid;border-bottom:1.5px solid;border-collapse:collapse}thead{border-bottom:1.5px solid}table td+td,table th+th{border-left:1px solid var(--color-gray1)}table tr{border-top:1px solid var(--color-gray2)}th,td{padding:.3em .6em;vertical-align:middle}td{vertical-align:top}caption.t-above{caption-side:top}caption.t-bottom{caption-side:bottom}caption{margin-bottom:.3em}figcaption{margin-top:.3em}th.org-right{text-align:center}th.org-left{text-align:center}th.org-center{text-align:center}td.org-right{text-align:right}td.org-left{text-align:left}td.org-center{text-align:center}
+</style>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">Emacs Org mode CSS for HTML export</h1>
+<p>
+A CSS file for <a href="https://orgmode.org/">Emacs Org mode</a> HTML export that provides an easy to read style
+suitable for smaller documents.
+</p>
+
+<p>
+I've come to use Org mode for much of my work related planning and tracking
+progress on tasks. Sometimes I'm requested to provide a report by email at which
+time it's convenient to be able to export what is readily available in one of my
+Org files. I also write longer emails in Org mode as I think it's easier to
+create a decent structure.
+</p>
+
+<div id="outline-container-org278d679" class="outline-2">
+<h2 id="org278d679">CSS File Usage</h2>
+<div class="outline-text-2" id="text-org278d679">
+<p>
+Use a block such as the following to specify document options and to inline the
+CSS file into the exported HTML file.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-org">#+options: toc:nil num:nil author:nil timestamp:nil ^:nil
+#+setupfile: inline.css.org
+</pre>
+</div>
+
+<p>
+I usually place the block after the Org document title. Export to HTML with the
+command <code>M-x org-html-export-to-html</code>.
+</p>
+</div>
+
+<div id="outline-container-org1b98e5c" class="outline-3">
+<h3 id="org1b98e5c">Custom Font</h3>
+<div class="outline-text-3" id="text-org1b98e5c">
+<p>
+A custom serif font is used for body text as I think the default serif font
+used by web browsers is too dense. If you come to rely on this CSS file you are
+wise to provide your own font source. See <a href="org.css">org.css</a> for details. The custom
+font can be found in <a href="fonts/Lora">fonts/Lora</a>.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org1d0ed72" class="outline-3">
+<h3 id="org1d0ed72">Disabling HTML Validation Link</h3>
+<div class="outline-text-3" id="text-org1d0ed72">
+<p>
+Org mode exports a HTML validation link by default. There does not seem to be a
+way to disable the link by using <code>#+options:</code> in the Org file. Add the following
+to the Emacs init file to disable the generated HTML validation link.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-elisp">;; HTML output: Don't emit validation link
+(setq org-html-validation-link nil)
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org6a3bca6" class="outline-2">
+<h2 id="org6a3bca6">CSS File Modifications</h2>
+<div class="outline-text-2" id="text-org6a3bca6">
+<p>
+Edit the file <a href="org.css">org.css</a>. Generate the file <code>inline.css.org</code> by running
+<code>make</code>. The <a href="https://yui.github.io/yuicompressor/">YUI Compressor</a> program is used to compress the CSS to reduce the
+size of exported HTML files.
+</p>
+
+<p>
+Example (Debian based Linux):
+</p>
+<pre class="example">
+sudo apt-get install yui-compressor
+make
+</pre>
+</div>
+</div>
+
+<div id="outline-container-orgade63c9" class="outline-2">
+<h2 id="orgade63c9">Style Demonstration</h2>
+<div class="outline-text-2" id="text-orgade63c9">
+<p>
+A style demonstration of typographical elements not already employed by this
+document.
+</p>
+</div>
+
+<div id="outline-container-orgbf36baa" class="outline-3">
+<h3 id="orgbf36baa">Block Quotes</h3>
+<div class="outline-text-3" id="text-orgbf36baa">
+<blockquote>
+<p>
+At 19.00 hours, ship's time, I made my way to the launching bay. The men around
+the shaft stood aside to let me pass, and I climbed down into the capsule. <i>&#x2013;
+Opening of the book Solaris by Stanislaw Lem</i>
+</p>
+</blockquote>
+</div>
+</div>
+
+<div id="outline-container-org00ff239" class="outline-3">
+<h3 id="org00ff239">Lists</h3>
+<div class="outline-text-3" id="text-org00ff239">
+</div>
+<div id="outline-container-org228abe5" class="outline-4">
+<h4 id="org228abe5">Grocery list <code>[1/3]</code></h4>
+<div class="outline-text-4" id="text-org228abe5">
+<ul class="org-ul">
+<li class="on"><code>[X]</code> Milk</li>
+<li class="off"><code>[&#xa0;]</code> Bread</li>
+<li class="off"><code>[&#xa0;]</code> Bananas</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org0714b0a" class="outline-3">
+<h3 id="org0714b0a">Tables</h3>
+<div class="outline-text-3" id="text-org0714b0a">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<caption class="t-above"><span class="table-number">Table 1:</span> Nutritional content per 100 g</caption>
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Grocery</th>
+<th scope="col" class="org-right">kcal</th>
+<th scope="col" class="org-right">Carbs (g)</th>
+<th scope="col" class="org-right">Protein (g)</th>
+<th scope="col" class="org-right">Fat (g)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">Banana</td>
+<td class="org-right">95</td>
+<td class="org-right">21.3</td>
+<td class="org-right">1.1</td>
+<td class="org-right">0.1</td>
+</tr>
+
+<tr>
+<td class="org-left">Milk (3%)</td>
+<td class="org-right">60</td>
+<td class="org-right">4.7</td>
+<td class="org-right">3.5</td>
+<td class="org-right">3</td>
+</tr>
+
+<tr>
+<td class="org-left">Pasta</td>
+<td class="org-right">360</td>
+<td class="org-right">71.9</td>
+<td class="org-right">12.5</td>
+<td class="org-right">1.2</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<div id="outline-container-orgacb90f7" class="outline-3">
+<h3 id="orgacb90f7">Org Keywords and Tags</h3>
+<div class="outline-text-3" id="text-orgacb90f7">
+</div>
+<div id="outline-container-orgf54b3b0" class="outline-4">
+<h4 id="orgf54b3b0"><span class="todo TODO">TODO</span> Do Laundry&#xa0;&#xa0;&#xa0;<span class="tag"><span class="important">important</span></span></h4>
+<div class="outline-text-4" id="text-orgf54b3b0">
+</div>
+</div>
+<div id="outline-container-org6b72010" class="outline-4">
+<h4 id="org6b72010"><span class="done DONE">DONE</span> Cook Sunday Dinner</h4>
+<div class="outline-text-4" id="text-org6b72010">
+</div>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>
