@@ -11,7 +11,7 @@ time it's convenient to be able to export what is readily available in one of my
 Org files. I also write longer emails in Org mode as I think it's easier to
 create a decent structure.
 
-* CSS File Usage
+* CSS Usage
 
 Use a block such as the following to specify document options and to inline the
 CSS file into the exported HTML file.
@@ -42,9 +42,9 @@ to the Emacs init file to disable the generated HTML validation link.
   (setq org-html-validation-link nil)
 #+end_src
 
-* CSS File Modifications
+* CSS Modifications
 
-Edit the file file:org.css. Generate the file =inline.css.org= by running
+Edit the file file:org.css and update the file =inline.css.org= by running
 =make=. The [[https://yui.github.io/yuicompressor/][YUI Compressor]] program is used to compress the CSS to reduce the
 size of exported HTML files.
 
@@ -53,6 +53,19 @@ Example (Debian based Linux):
   sudo apt-get install yui-compressor
   make
 #+end_src
+
+* Licensing Terms
+
+This work is a derivative of https://github.com/gongzhitaao/orgcss.
+
+The license file file:fonts/Lora/OFL.txt describes the terms under which the font
+/Lora/ is distributed.
+
+The license files file:LICENSE.MIT and file:LICENSE.996ICU applies to =org.css=
+and the derivative file =inline.css.org=.
+
+The license file file:LICENSE.MIT applies to the remaining sources in the root
+directory of this source distribution.
 
 * Style Demonstration
 
