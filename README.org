@@ -7,9 +7,12 @@ suitable for smaller documents.
 
 I've come to use Org mode for much of my work related planning and tracking
 progress on tasks. Sometimes I'm requested to provide a report by email at which
-time it's convenient to be able to export what is readily available in one of my
+time it's convenient to be able to export what's readily available in one of my
 Org files. I also write longer emails in Org mode as I think it's easier to
 create a decent structure.
+
+See https://johan-bolmsjo.github.io/org_css/README.html for how this document is
+rendered as HTML.
 
 * CSS Usage
 
@@ -28,8 +31,8 @@ command =M-x org-html-export-to-html=.
 
 A custom serif font is used for body text as I think the default serif font
 used by web browsers is too dense. If you come to rely on this CSS file you are
-wise to provide your own font source. See file:org.css for details. The custom
-font can be found in file:fonts/Lora.
+wise to provide your own font source. See [[file:org.css][org.css]] for details. The custom
+font can be found in [[file:fonts/Lora][fonts/Lora]].
 
 ** Disabling HTML Validation Link
 
@@ -44,7 +47,7 @@ to the Emacs init file to disable the generated HTML validation link.
 
 * CSS Modifications
 
-Edit the file file:org.css and update the file =inline.css.org= by running
+Edit the file [[file:org.css][org.css]] and update the file =inline.css.org= by running
 =make=. The [[https://yui.github.io/yuicompressor/][YUI Compressor]] program is used to compress the CSS to reduce the
 size of exported HTML files.
 
@@ -58,13 +61,13 @@ Example (Debian based Linux):
 
 This work is a derivative of https://github.com/gongzhitaao/orgcss.
 
-The license file file:fonts/Lora/OFL.txt describes the terms under which the font
+The license file [[file:fonts/Lora/OFL.txt][fonts/Lora/OFL.txt]] describes the terms under which the font
 /Lora/ is distributed.
 
-The license files file:LICENSE.MIT and file:LICENSE.996ICU applies to =org.css=
+The license files [[file:LICENSE.MIT][LICENSE.MIT]] and [[file:LICENSE.996][LICENSE.996ICU]] applies to =org.css=
 and the derivative file =inline.css.org=.
 
-The license file file:LICENSE.MIT applies to the remaining sources in the root
+The license file [[file:LICENSE.MIT][LICENSE.MIT]] applies to the remaining sources in the root
 directory of this source distribution.
 
 * Style Demonstration
