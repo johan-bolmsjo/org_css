@@ -1,5 +1,5 @@
 #+title: Emacs Org mode CSS for HTML export
-#+options: toc:nil num:nil author:nil timestamp:nil ^:nil
+#+options: toc:nil num:nil author:nil timestamp:nil ^:nil pri:t
 #+setupfile: inline.css.org
 
 A CSS file for [[https://orgmode.org/][Emacs Org mode]] HTML export that provides an easy to read style
@@ -88,6 +88,13 @@ Opening of the book Solaris by Stanislaw Lem/
 - [ ] Bread
 - [ ] Bananas
 
+*** Definition List
+
+- GNU :: GNU's Not Unix
+- Unix :: Multitasking, multi-user operating system. Conceived at Bell Labs
+  research center by Ken Thompson, Dennis Ritchie, and others in the 1970s.
+- Linux :: Popular Unix like operating system kernel.
+
 ** Tables
 #+CAPTION: Nutritional content per 100 g
 | Grocery   | kcal | Carbs (g) | Protein (g) | Fat (g) |
@@ -97,7 +104,7 @@ Opening of the book Solaris by Stanislaw Lem/
 | Pasta     |  360 |      71.9 |        12.5 |     1.2 |
 
 ** Org Keywords and Tags
-*** TODO [#A] Do Laundry                                        :important:
+*** TODO [#A] Do Laundry                                           :weekly:
 DEADLINE: <2022-03-06 sön +1w>
 *** DONE Cook Sunday Dinner
 CLOSED: [2022-03-06 sön 15:47]
