@@ -83,13 +83,22 @@ Opening of the book Solaris by Stanislaw Lem/
 #+end_quote
 
 ** Lists
-*** Grocery list [1/3]
-- [X] Milk
-- [ ] Bread
-- [ ] Bananas
+*** Bullet List [2/3]
+- [X] Wash the car
+- [ ] Buy groceries
+  + Milk
+  + Bread
+  + Bananas
+- [X] Feed the dog
+
+*** Numbered List
+1. Dogs
+   1. Akita
+   2. Beagle
+2. Cats
+   1. Bengal
 
 *** Definition List
-
 - GNU :: GNU's Not Unix
 - Unix :: Multitasking, multi-user operating system. Conceived at Bell Labs
   research center by Ken Thompson, Dennis Ritchie, and others in the 1970s.
