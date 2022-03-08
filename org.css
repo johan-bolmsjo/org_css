@@ -11,28 +11,28 @@
 }
 
 /* NOTE! Please consider providing your own font URL as there is no guarantee
-         that http://bitmaster.se will provide this font forever. */
+         that https://bitmaster.se will provide this font forever. */
 @font-face {
     font-family: "Lora";
-    src: local("Lora Regular"), url("http://bitmaster.se/fonts/Lora/Lora-Regular-Mini.woff") format("woff");
+    src: local("Lora Regular"), url("https://bitmaster.se/fonts/Lora/Lora-Regular-Mini.woff") format("woff");
     font-style: normal;
     font-weight: normal;
 }
 @font-face {
     font-family: "Lora";
-    src: local("Lora Demi Bold"), url("http://bitmaster.se/fonts/Lora/Lora-SemiBold-Mini.woff") format("woff");
+    src: local("Lora Demi Bold"), url("https://bitmaster.se/fonts/Lora/Lora-SemiBold-Mini.woff") format("woff");
     font-style: normal;
     font-weight: bold;
 }
 @font-face {
     font-family: "Lora";
-    src: local("Lora Italic"), url("http://bitmaster.se/fonts/Lora/Lora-Italic-Mini.woff") format("woff");
+    src: local("Lora Italic"), url("https://bitmaster.se/fonts/Lora/Lora-Italic-Mini.woff") format("woff");
     font-style: italic;
     font-weight: normal;
 }
 @font-face {
     font-family: "Lora";
-    src: local("Lora Demi Bold Italic"), url("http://bitmaster.se/fonts/Lora/Lora-SemiBoldItalic-Mini.woff") format("woff");
+    src: local("Lora Demi Bold Italic"), url("https://bitmaster.se/fonts/Lora/Lora-SemiBoldItalic-Mini.woff") format("woff");
     font-style: italic;
     font-weight: bold;
 }
