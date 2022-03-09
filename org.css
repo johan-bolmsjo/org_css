@@ -36,6 +36,30 @@
     font-style: italic;
     font-weight: bold;
 }
+@font-face {
+    font-family: "Go-Mono";
+    src: local("Go Mono Regular"), url("https://bitmaster.se/fonts/Go-Mono/Go-Mono-Mini.woff") format("woff");
+    font-style: normal;
+    font-weight: normal;
+}
+@font-face {
+    font-family: "Go-Mono";
+    src: local("Go Mono Demi Bold"), url("https://bitmaster.se/fonts/Go-Mono/Go-Mono-Bold-Mini.woff") format("woff");
+    font-style: normal;
+    font-weight: bold;
+}
+@font-face {
+    font-family: "Go-Mono";
+    src: local("Go Mono Italic"), url("https://bitmaster.se/fonts/Go-Mono/Go-Mono-Italic-Mini.woff") format("woff");
+    font-style: italic;
+    font-weight: normal;
+}
+@font-face {
+    font-family: "Go-Mono";
+    src: local("Go Mono Demi Bold Italic"), url("https://bitmaster.se/fonts/Go-Mono/Go-Mono-Bold-Italic-Mini.woff") format("woff");
+    font-style: italic;
+    font-weight: bold;
+}
 
 html {
     line-height: 130%;
@@ -80,9 +104,7 @@ blockquote {
 
 /* Preformatted text */
 tt, code, pre {
-    /* Fix monspace size issues in some browsers.
-       https://github.com/necolas/normalize.css/issues/519#issuecomment-197131966 */
-    font-family: monospace, monospace;
+    font-family: Go-Mono, monospace;
     font-size: 90%;
 }
 pre {
@@ -210,4 +232,12 @@ td.org-left {
 
 td.org-center {
     text-align: center;
+}
+
+/* Tags and keywords */
+.todo, .done, .priority, .tag {
+    font-family: Go-Mono;
+}
+.tag {
+    border-radius: 3px;
 }

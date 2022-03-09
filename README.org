@@ -27,12 +27,17 @@ CSS file into the exported HTML file.
 I usually place the block after the Org document title. Export to HTML with the
 command =M-x org-html-export-to-html=.
 
-** Custom Font
+** Custom Fonts
 
 A custom serif font is used for body text as I think the default serif font
-used by web browsers is too dense. If you come to rely on this CSS file you are
-wise to provide your own font source. See [[file:org.css][org.css]] for details. The custom
-font can be found in [[file:fonts/Lora][fonts/Lora]].
+used by web browsers is too dense.
+
+A custom =monospace= font is used as the default mono space font /courier/ on
+Windows results in a very different look compared to what is typically displayed
+on Linux systems.
+
+If you come to rely on this CSS file you are wise to provide your own font
+source. See [[file:org.css][org.css]] for details.
 
 ** Disabling HTML Validation Link
 
@@ -61,14 +66,18 @@ Example (Debian based Linux):
 
 This work is a derivative of https://github.com/gongzhitaao/orgcss.
 
-The license file [[file:fonts/Lora/OFL.txt][fonts/Lora/OFL.txt]] describes the terms under which the font
-/Lora/ is distributed.
-
 The license files [[file:LICENSE.MIT][LICENSE.MIT]] and [[file:LICENSE.996][LICENSE.996ICU]] applies to =org.css=
 and the derivative file =inline.css.org=.
 
 The license file [[file:LICENSE.MIT][LICENSE.MIT]] applies to the remaining sources in the root
 directory of this source distribution.
+
+** Fonts
+The license file [[file:fonts/Lora/OFL.txt][fonts/Lora/OFL.txt]] describes the terms under which the font
+/Lora/ is distributed.
+
+The license file [[file:fonts/Go-Mono/README][fonts/Go-Mono/README]] describes the terms under which the font
+/Go Mono/ is distributed.
 
 * Style Demonstration
 
