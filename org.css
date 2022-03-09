@@ -107,6 +107,10 @@ tt, code, pre {
     font-family: Go-Mono, monospace;
     font-size: 90%;
 }
+pre code {
+    /* Avoid double scaling font size for code tags inside pre tags */
+    font-size: 100%;
+}
 pre {
     margin-left: 0em;
     border: 1px solid var(--color-gray2);
