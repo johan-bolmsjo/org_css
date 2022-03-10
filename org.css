@@ -105,7 +105,7 @@ blockquote {
 /* Preformatted text */
 tt, code, pre {
     font-family: Go-Mono, monospace;
-    font-size: 90%;
+    font-size: 87.5%;
 }
 pre code {
     /* Avoid double scaling font size for code tags inside pre tags */
