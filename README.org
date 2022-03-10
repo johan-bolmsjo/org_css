@@ -76,8 +76,8 @@ directory of this source distribution.
 The license file [[file:fonts/Lora/OFL.txt][fonts/Lora/OFL.txt]] describes the terms under which the font
 /Lora/ is distributed.
 
-The license file [[file:fonts/Go-Mono/README][fonts/Go-Mono/README]] describes the terms under which the font
-/Go Mono/ is distributed.
+The license file [[file:fonts/Inconsolata/OFL.txt][fonts/Inconsolata/OFL.txt]] describes the terms under which the font
+/Inconsolata/ is distributed.
 
 * Style Demonstration
 

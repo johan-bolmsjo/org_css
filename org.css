@@ -37,27 +37,15 @@
     font-weight: bold;
 }
 @font-face {
-    font-family: "Go-Mono";
-    src: local("Go Mono Regular"), url("https://bitmaster.se/fonts/Go-Mono/Go-Mono-Mini.woff") format("woff");
+    font-family: "Inconsolata";
+    src: local("Inconsolata Regular"), url("https://bitmaster.se/fonts/Inconsolata/Inconsolata-Regular-Mini.woff") format("woff");
     font-style: normal;
     font-weight: normal;
 }
 @font-face {
-    font-family: "Go-Mono";
-    src: local("Go Mono Demi Bold"), url("https://bitmaster.se/fonts/Go-Mono/Go-Mono-Bold-Mini.woff") format("woff");
+    font-family: "Inconsolata";
+    src: local("Inconsolata Demi Bold"), url("https://bitmaster.se/fonts/Inconsolata/Inconsolata-SemiBold-Mini.woff") format("woff");
     font-style: normal;
-    font-weight: bold;
-}
-@font-face {
-    font-family: "Go-Mono";
-    src: local("Go Mono Italic"), url("https://bitmaster.se/fonts/Go-Mono/Go-Mono-Italic-Mini.woff") format("woff");
-    font-style: italic;
-    font-weight: normal;
-}
-@font-face {
-    font-family: "Go-Mono";
-    src: local("Go Mono Demi Bold Italic"), url("https://bitmaster.se/fonts/Go-Mono/Go-Mono-Bold-Italic-Mini.woff") format("woff");
-    font-style: italic;
     font-weight: bold;
 }
 
@@ -104,8 +92,8 @@ blockquote {
 
 /* Preformatted text */
 tt, code, pre {
-    font-family: Go-Mono, monospace;
-    font-size: 87.5%;
+    font-family: Inconsolata, monospace;
+    font-size: 100%; /* Different monospace fonts vary in size in relation to the serif font! */
 }
 pre code {
     /* Avoid double scaling font size for code tags inside pre tags */
@@ -240,7 +228,7 @@ td.org-center {
 
 /* Tags and keywords */
 .todo, .done, .priority, .tag {
-    font-family: Go-Mono;
+    font-family: Inconsolata;
 }
 .tag {
     border-radius: 3px;

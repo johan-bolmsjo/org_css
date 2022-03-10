@@ -1,19 +1,21 @@
-Lora font downloaded from https://fonts.google.com/specimen/Lora
+Inconsolata font version 3.001 downloaded from
+https://github.com/googlefonts/Inconsolata
 
 The directory mini/ contains versions of the fonts in [woff] format with some
 glyphs removed to reduce the size. The glyphs that remain are:
 
 - Basic Latin
 - Latin-1 Supplement
-- Greek
 - General Punctuation
-- Super and Sub scripts
-- Currency Symbols
-- Letterlike Symbols
+- Arrows
 - Mathematical Operators
-- Geometrical Shapes
-- Math Misc. Symbols-A
-- Latin Ligatures
+- Control Pictures
+- Box Drawing
+- Block Elements
+- Geometric Shapes
+- Symbols Misc.
+- Symbols and Arrows Supplement
+- Specials
 
 -----
 [woff]: https://developer.mozilla.org/en-US/docs/Web/Guide/WOFF
