@@ -14,37 +14,37 @@
          that https://bitmaster.se will provide this font forever. */
 @font-face {
     font-family: "Lora";
-    src: local("Lora Regular"), url("https://bitmaster.se/fonts/Lora/Lora-Regular-Mini.woff") format("woff");
+    src: url("https://bitmaster.se/fonts/Lora/Lora-Regular-Mini.woff") format("woff");
     font-style: normal;
     font-weight: normal;
 }
 @font-face {
     font-family: "Lora";
-    src: local("Lora Demi Bold"), url("https://bitmaster.se/fonts/Lora/Lora-SemiBold-Mini.woff") format("woff");
+    src: url("https://bitmaster.se/fonts/Lora/Lora-SemiBold-Mini.woff") format("woff");
     font-style: normal;
     font-weight: bold;
 }
 @font-face {
     font-family: "Lora";
-    src: local("Lora Italic"), url("https://bitmaster.se/fonts/Lora/Lora-Italic-Mini.woff") format("woff");
+    src: url("https://bitmaster.se/fonts/Lora/Lora-Italic-Mini.woff") format("woff");
     font-style: italic;
     font-weight: normal;
 }
 @font-face {
     font-family: "Lora";
-    src: local("Lora Demi Bold Italic"), url("https://bitmaster.se/fonts/Lora/Lora-SemiBoldItalic-Mini.woff") format("woff");
+    src: url("https://bitmaster.se/fonts/Lora/Lora-SemiBoldItalic-Mini.woff") format("woff");
     font-style: italic;
     font-weight: bold;
 }
 @font-face {
     font-family: "Inconsolata";
-    src: local("Inconsolata Regular"), url("https://bitmaster.se/fonts/Inconsolata/Inconsolata-Regular-Mini.woff") format("woff");
+    src: url("https://bitmaster.se/fonts/Inconsolata/Inconsolata-Regular-Mini.woff") format("woff");
     font-style: normal;
     font-weight: normal;
 }
 @font-face {
     font-family: "Inconsolata";
-    src: local("Inconsolata Demi Bold"), url("https://bitmaster.se/fonts/Inconsolata/Inconsolata-SemiBold-Mini.woff") format("woff");
+    src: url("https://bitmaster.se/fonts/Inconsolata/Inconsolata-SemiBold-Mini.woff") format("woff");
     font-style: normal;
     font-weight: bold;
 }
