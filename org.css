@@ -87,7 +87,7 @@ h1, h2, h3, h4, h5 {
    h1 level is used for the document title. */
 h2 {
     padding-top: 0.5rem;
-    border-top: 2px dotted var(--color-gray2);
+    border-top: 3px dotted var(--color-gray2);
 }
 
 blockquote {
@@ -161,7 +161,7 @@ a:visited {
 }
 a:hover {
     /*text-decoration: underline; */
-    border-bottom: 2px dotted;
+    border-bottom: 1px solid;
 }
 
 /* Table style */
