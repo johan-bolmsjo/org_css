@@ -1,4 +1,4 @@
-TARGETS := inline.css.org org-mini.css
+TARGETS := inline.css.org org-mini.css README.html
 
 .PHONY: all
 all: $(TARGETS)
@@ -14,5 +14,8 @@ inline.css.org: org.css
 org-mini.css: org.css
 	@echo Generating $@
 	@yui-compressor $< > $@
+
+README.html: README.org inline.css.org
+	emacs --batch --load publish.el --funcall org-publish-all
 
 $(TARGETS): $(MAKEFILE_LIST)
