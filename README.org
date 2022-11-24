@@ -1,6 +1,7 @@
 #+title: Emacs Org mode CSS for HTML export
-#+options: toc:nil num:nil author:nil timestamp:nil ^:nil pri:t
+#+options: pri:t
 #+setupfile: inline.css.org
+#+date: [2022-11-24]
 
 A CSS file for [[https://orgmode.org/][Emacs Org mode]] HTML export that provides an easy to read style
 suitable for smaller documents.
