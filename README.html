@@ -7,271 +7,55 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Emacs Org mode CSS for HTML export</title>
 <meta name="generator" content="Org Mode" />
-<style>
-  #content { max-width: 60em; margin: auto; }
-  .title  { text-align: center;
-             margin-bottom: .2em; }
-  .subtitle { text-align: center;
-              font-size: medium;
-              font-weight: bold;
-              margin-top:0; }
-  .todo   { font-family: monospace; color: red; }
-  .done   { font-family: monospace; color: green; }
-  .priority { font-family: monospace; color: orange; }
-  .tag    { background-color: #eee; font-family: monospace;
-            padding: 2px; font-size: 80%; font-weight: normal; }
-  .timestamp { color: #bebebe; }
-  .timestamp-kwd { color: #5f9ea0; }
-  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
-  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
-  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
-  .underline { text-decoration: underline; }
-  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
-  p.verse { margin-left: 3%; }
-  pre {
-    border: 1px solid #e6e6e6;
-    border-radius: 3px;
-    background-color: #f2f2f2;
-    padding: 8pt;
-    font-family: monospace;
-    overflow: auto;
-    margin: 1.2em;
-  }
-  pre.src {
-    position: relative;
-    overflow: auto;
-  }
-  pre.src:before {
-    display: none;
-    position: absolute;
-    top: -8px;
-    right: 12px;
-    padding: 3px;
-    color: #555;
-    background-color: #f2f2f299;
-  }
-  pre.src:hover:before { display: inline; margin-top: 14px;}
-  /* Languages per Org manual */
-  pre.src-asymptote:before { content: 'Asymptote'; }
-  pre.src-awk:before { content: 'Awk'; }
-  pre.src-authinfo::before { content: 'Authinfo'; }
-  pre.src-C:before { content: 'C'; }
-  /* pre.src-C++ doesn't work in CSS */
-  pre.src-clojure:before { content: 'Clojure'; }
-  pre.src-css:before { content: 'CSS'; }
-  pre.src-D:before { content: 'D'; }
-  pre.src-ditaa:before { content: 'ditaa'; }
-  pre.src-dot:before { content: 'Graphviz'; }
-  pre.src-calc:before { content: 'Emacs Calc'; }
-  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
-  pre.src-fortran:before { content: 'Fortran'; }
-  pre.src-gnuplot:before { content: 'gnuplot'; }
-  pre.src-haskell:before { content: 'Haskell'; }
-  pre.src-hledger:before { content: 'hledger'; }
-  pre.src-java:before { content: 'Java'; }
-  pre.src-js:before { content: 'Javascript'; }
-  pre.src-latex:before { content: 'LaTeX'; }
-  pre.src-ledger:before { content: 'Ledger'; }
-  pre.src-lisp:before { content: 'Lisp'; }
-  pre.src-lilypond:before { content: 'Lilypond'; }
-  pre.src-lua:before { content: 'Lua'; }
-  pre.src-matlab:before { content: 'MATLAB'; }
-  pre.src-mscgen:before { content: 'Mscgen'; }
-  pre.src-ocaml:before { content: 'Objective Caml'; }
-  pre.src-octave:before { content: 'Octave'; }
-  pre.src-org:before { content: 'Org mode'; }
-  pre.src-oz:before { content: 'OZ'; }
-  pre.src-plantuml:before { content: 'Plantuml'; }
-  pre.src-processing:before { content: 'Processing.js'; }
-  pre.src-python:before { content: 'Python'; }
-  pre.src-R:before { content: 'R'; }
-  pre.src-ruby:before { content: 'Ruby'; }
-  pre.src-sass:before { content: 'Sass'; }
-  pre.src-scheme:before { content: 'Scheme'; }
-  pre.src-screen:before { content: 'Gnu Screen'; }
-  pre.src-sed:before { content: 'Sed'; }
-  pre.src-sh:before { content: 'shell'; }
-  pre.src-sql:before { content: 'SQL'; }
-  pre.src-sqlite:before { content: 'SQLite'; }
-  /* additional languages in org.el's org-babel-load-languages alist */
-  pre.src-forth:before { content: 'Forth'; }
-  pre.src-io:before { content: 'IO'; }
-  pre.src-J:before { content: 'J'; }
-  pre.src-makefile:before { content: 'Makefile'; }
-  pre.src-maxima:before { content: 'Maxima'; }
-  pre.src-perl:before { content: 'Perl'; }
-  pre.src-picolisp:before { content: 'Pico Lisp'; }
-  pre.src-scala:before { content: 'Scala'; }
-  pre.src-shell:before { content: 'Shell Script'; }
-  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
-  /* additional language identifiers per "defun org-babel-execute"
-       in ob-*.el */
-  pre.src-cpp:before  { content: 'C++'; }
-  pre.src-abc:before  { content: 'ABC'; }
-  pre.src-coq:before  { content: 'Coq'; }
-  pre.src-groovy:before  { content: 'Groovy'; }
-  /* additional language identifiers from org-babel-shell-names in
-     ob-shell.el: ob-shell is the only babel language using a lambda to put
-     the execution function name together. */
-  pre.src-bash:before  { content: 'bash'; }
-  pre.src-csh:before  { content: 'csh'; }
-  pre.src-ash:before  { content: 'ash'; }
-  pre.src-dash:before  { content: 'dash'; }
-  pre.src-ksh:before  { content: 'ksh'; }
-  pre.src-mksh:before  { content: 'mksh'; }
-  pre.src-posh:before  { content: 'posh'; }
-  /* Additional Emacs modes also supported by the LaTeX listings package */
-  pre.src-ada:before { content: 'Ada'; }
-  pre.src-asm:before { content: 'Assembler'; }
-  pre.src-caml:before { content: 'Caml'; }
-  pre.src-delphi:before { content: 'Delphi'; }
-  pre.src-html:before { content: 'HTML'; }
-  pre.src-idl:before { content: 'IDL'; }
-  pre.src-mercury:before { content: 'Mercury'; }
-  pre.src-metapost:before { content: 'MetaPost'; }
-  pre.src-modula-2:before { content: 'Modula-2'; }
-  pre.src-pascal:before { content: 'Pascal'; }
-  pre.src-ps:before { content: 'PostScript'; }
-  pre.src-prolog:before { content: 'Prolog'; }
-  pre.src-simula:before { content: 'Simula'; }
-  pre.src-tcl:before { content: 'tcl'; }
-  pre.src-tex:before { content: 'TeX'; }
-  pre.src-plain-tex:before { content: 'Plain TeX'; }
-  pre.src-verilog:before { content: 'Verilog'; }
-  pre.src-vhdl:before { content: 'VHDL'; }
-  pre.src-xml:before { content: 'XML'; }
-  pre.src-nxml:before { content: 'XML'; }
-  /* add a generic configuration mode; LaTeX export needs an additional
-     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
-  pre.src-conf:before { content: 'Configuration File'; }
-
-  table { border-collapse:collapse; }
-  caption.t-above { caption-side: top; }
-  caption.t-bottom { caption-side: bottom; }
-  td, th { vertical-align:top;  }
-  th.org-right  { text-align: center;  }
-  th.org-left   { text-align: center;   }
-  th.org-center { text-align: center; }
-  td.org-right  { text-align: right;  }
-  td.org-left   { text-align: left;   }
-  td.org-center { text-align: center; }
-  dt { font-weight: bold; }
-  .footpara { display: inline; }
-  .footdef  { margin-bottom: 1em; }
-  .figure { padding: 1em; }
-  .figure p { text-align: center; }
-  .equation-container {
-    display: table;
-    text-align: center;
-    width: 100%;
-  }
-  .equation {
-    vertical-align: middle;
-  }
-  .equation-label {
-    display: table-cell;
-    text-align: right;
-    vertical-align: middle;
-  }
-  .inlinetask {
-    padding: 10px;
-    border: 2px solid gray;
-    margin: 10px;
-    background: #ffffcc;
-  }
-  #org-div-home-and-up
-   { text-align: right; font-size: 70%; white-space: nowrap; }
-  textarea { overflow-x: auto; }
-  .linenr { font-size: smaller }
-  .code-highlighted { background-color: #ffff00; }
-  .org-info-js_info-navigation { border-style: none; }
-  #org-info-js_console-label
-    { font-size: 10px; font-weight: bold; white-space: nowrap; }
-  .org-info-js_search-highlight
-    { background-color: #ffff00; color: #000000; font-weight: bold; }
-  .org-svg { }
-</style>
-<style type="text/css">
-:root{--color-black1:#0a0a0a;--color-black2:#333;--color-gray1:#777;--color-gray2:#ccc;--color-white1:#fafafa;--color-blue1:#0a0ad8;--color-purple1:#6e0ab9;--color-tag:#bbb;--color-headline:#375eab}@font-face{font-family:"Lora";font-style:normal;font-weight:normal;font-display:swap;src:url("https://bitmaster.se/fonts/Lora/Lora-Regular-Mini.woff") format("woff")}@font-face{font-family:"Lora";font-style:normal;font-weight:bold;font-display:swap;src:url("https://bitmaster.se/fonts/Lora/Lora-SemiBold-Mini.woff") format("woff")}@font-face{font-family:"Lora";font-style:italic;font-weight:normal;font-display:swap;src:url("https://bitmaster.se/fonts/Lora/Lora-Italic-Mini.woff") format("woff")}@font-face{font-family:"Lora";font-style:italic;font-weight:bold;font-display:swap;src:url("https://bitmaster.se/fonts/Lora/Lora-SemiBoldItalic-Mini.woff") format("woff")}@font-face{font-family:"Inconsolata";font-style:normal;font-weight:normal;font-display:swap;src:url("https://bitmaster.se/fonts/Inconsolata/Inconsolata-Regular-Mini.woff") format("woff")}@font-face{font-family:"Inconsolata";font-style:normal;font-weight:bold;font-display:swap;src:url("https://bitmaster.se/fonts/Inconsolata/Inconsolata-SemiBold-Mini.woff") format("woff")}html{line-height:130%;-webkit-text-size-adjust:100%}body{font-family:Lora,serif;font-size:16px;margin-left:2em;max-width:48em;color:var(--color-black1)}@media(pointer:coarse){body{margin-left:0}}h1{font:200% sans-serif}h2{font:180% sans-serif}h3{font:150% sans-serif}h4{font:125% sans-serif}h5{font:110% sans-serif}h1,h2,h3,h4,h5{margin-top:1em;margin-bottom:.5em;color:var(--color-headline)}h2{padding-top:.5rem;border-top:3px dotted var(--color-gray2)}blockquote{border-left:5px solid var(--color-gray2);margin:1em 1.5em;padding-left:1em}tt,code,pre{font-family:Inconsolata,monospace;font-size:100%}pre code{font-size:100%}pre{margin-left:0;border:1px solid var(--color-gray2);border-radius:3px;background-color:var(--color-white1);padding:8pt;overflow:auto;margin:0}pre.src{position:relative;overflow:auto}pre.src:before{display:block;position:absolute;top:0;right:0;padding:0 .5em;border-bottom-left-radius:8px;border:0;color:var(--color-white1);background-color:var(--color-tag)}pre.src:hover:before{margin-top:0}li:not(:last-child){margin-bottom:.2em}hr{border:0;height:1px;background-color:var(--color-black2);margin-top:1.5em}a{border:0;outline:0;color:var(--color-blue1);text-decoration:none}a:visited{color:var(--color-purple1)}a:hover{border-bottom:1px solid}table{margin:1em;border-top:1.5px solid;border-bottom:1.5px solid;border-collapse:collapse}thead{border-bottom:1.5px solid}table td+td,table th+th{border-left:1px solid var(--color-gray1)}table tr{border-top:1px solid var(--color-gray2)}th,td{padding:.3em .6em;vertical-align:middle}td{vertical-align:top}caption.t-above{caption-side:top}caption.t-bottom{caption-side:bottom}caption{margin-bottom:.3em}figcaption{margin-top:.3em}th.org-right{text-align:center}th.org-left{text-align:center}th.org-center{text-align:center}td.org-right{text-align:right}td.org-left{text-align:left}td.org-center{text-align:center}.todo,.done,.priority,.tag{font-family:Inconsolata}.tag{border-radius:3px}#postamble p{margin-top:1.5rem;padding-top:.5rem;border-top:1px solid var(--color-black2)}
-</style>
+<style type="text/css">:root{--color-black1:#0a0a0a;--color-black2:#333;--color-gray1:#777;--color-gray2:#ccc;--color-white1:#fafafa;--color-blue1:#0a0ad8;--color-purple1:#6e0ab9;--color-tag:#bbb;--color-headline:#375eab}html{line-height:130%;-webkit-text-size-adjust:100%}body{font-family:serif,serif;font-size:16px;margin-left:2em;max-width:48em;color:var(--color-black1)}@media(pointer:coarse){body{margin-left:0}}h1{font:200% sans-serif}h2{font:180% sans-serif}h3{font:150% sans-serif}h4{font:125% sans-serif}h5{font:110% sans-serif}h1,h2,h3,h4,h5{margin-top:1em;margin-bottom:.5em;color:var(--color-headline)}h2{padding-top:.5rem;border-top:3px dotted var(--color-gray2)}blockquote{border-left:5px solid var(--color-gray2);margin:1em 1.5em;padding-left:1em}tt,code,pre{font-family:monospace,monospace;font-size:90%}pre code{font-size:100%}pre{border:1px solid var(--color-gray2);border-radius:3px;background-color:var(--color-white1);padding:8pt;overflow:auto;margin:0}dt{font-weight:bold}li:not(:last-child){margin-bottom:.2em}hr{border:0;height:1px;background-color:var(--color-black2);margin-top:1.5em}a{border:0;outline:0;color:var(--color-blue1);text-decoration:none}a:visited{color:var(--color-purple1)}a:hover{border-bottom:1px solid}table{margin:1em;border-top:1.5px solid;border-bottom:1.5px solid;border-collapse:collapse}thead{border-bottom:1.5px solid}table td+td,table th+th{border-left:1px solid var(--color-gray1)}table tr{border-top:1px solid var(--color-gray2)}th,td{padding:.3em .6em;vertical-align:middle}td{vertical-align:top}caption.t-above{caption-side:top}caption.t-bottom{caption-side:bottom}caption{margin-bottom:.3em}figcaption{margin-top:.3em}th.org-right{text-align:center}th.org-left{text-align:center}th.org-center{text-align:center}td.org-right{text-align:right}td.org-left{text-align:left}td.org-center{text-align:center}p.verse{margin-left:3%}#postamble p,#preamble p{font-size:90%}#postamble p{margin-top:1.5rem;padding-top:.5rem;border-top:1px solid var(--color-black2)}.title{text-align:center;margin-bottom:.2em}.subtitle{text-align:center;font-size:large;font-weight:bold;margin-top:0}.todo,.done,.priority,.tag{font-family:monospace,monospace}.tag{background-color:#eee;border-radius:3px;font-size:80%;font-weight:normal;padding:2px}.todo{color:red}.done{color:green}.priority{color:orange}.timestamp{color:#bebebe}.timestamp-kwd{color:#5f9ea0}.org-right{margin-left:auto;margin-right:0;text-align:right}.org-left{margin-left:0;margin-right:auto;text-align:left}.org-center{margin-left:auto;margin-right:auto;text-align:center}.underline{text-decoration:underline}.footpara{display:inline}.footdef{margin-bottom:1em}.figure{padding:1em}.figure p{text-align:center}</style>
+<link rel="stylesheet" type="text/css" href="https://bitmaster.se/css/org-font-optimized.css" />
 </head>
 <body>
 <div id="content" class="content">
 <h1 class="title">Emacs Org mode CSS for HTML export</h1>
 <p>
-A CSS file for <a href="https://orgmode.org/">Emacs Org mode</a> HTML export that provides an easy to read style
-suitable for smaller documents.
+A CSS file for <a href="https://orgmode.org/">Emacs Org mode</a> HTML export that provides an easy to read style suitable for smaller documents.
 </p>
 
 <p>
-I've come to use Org mode for much of my work related planning and tracking
-progress on tasks. Sometimes I'm requested to provide a report by email at which
-time it's convenient to be able to export what's readily available in one of my
-Org files. I also write longer emails in Org mode as I think it's easier to
-create a decent structure.
+I've come to use Org mode for much of my work related planning and tracking progress on tasks.
+I also write longer emails in Org mode as I think it's easier to create a decent structure.
+The Org mode HTML export is a convenient way to share such documents with less blessed individuals (non Org users).
 </p>
 
 <p>
-See <a href="https://johan-bolmsjo.github.io/org_css/README.html">https://johan-bolmsjo.github.io/org_css/README.html</a> for how this document is
-rendered as HTML.
+See <a href="https://johan-bolmsjo.github.io/org_css/README.html">https://johan-bolmsjo.github.io/org_css/README.html</a> for how this document is rendered as HTML.
 </p>
 
 <div id="outline-container-orgdb34a14" class="outline-2">
 <h2 id="orgdb34a14">CSS Usage</h2>
 <div class="outline-text-2" id="text-orgdb34a14">
 <p>
-Use a block such as the following to specify document options and to inline the
-CSS file into the exported HTML file.
-</p>
-
-<div class="org-src-container">
-<pre class="src src-org">#+options: toc:nil num:nil author:nil timestamp:nil ^:nil
-#+setupfile: inline.css.org
-</pre>
-</div>
-
-<p>
-I usually place the block after the Org document title. Export to HTML with the
-command <code>M-x org-html-export-to-html</code>.
-</p>
-</div>
-
-<div id="outline-container-org9be67af" class="outline-3">
-<h3 id="org9be67af">Custom Fonts</h3>
-<div class="outline-text-3" id="text-org9be67af">
-<p>
-A custom serif font is used for body text as I think the default serif font
-used by web browsers is too dense.
+Three CSS files are contained in this repository.
+Files named <i>main</i> contains non font related layout.
+Files named <i>font</i> attempts to use fonts hosted on my domain.
+Finally, files named <i>full</i> contains the previously mentioned files concatenated.
 </p>
 
 <p>
-A custom <code>monospace</code> font is used as the default mono space font <i>courier</i> on
-Windows results in a very different look compared to what is typically displayed
-on Linux systems.
+Versions of the CSS files named <i>optimized</i> has been run through the <code>yui-compressor</code> to reduce their size.
 </p>
 
 <p>
-If you come to rely on this CSS file you are wise to provide your own font
-source. See <a href="org.css">org.css</a> for details.
+Files with a <code>.css.el</code> post-fix are meant to be loaded either from an org-publish file or from <code>init.el</code> to embed CSS into exported HTML files.
+See how this is done in <code>./org-publish.el</code>.
 </p>
-</div>
-</div>
 
-<div id="outline-container-org08a58e3" class="outline-3">
-<h3 id="org08a58e3">Disabling HTML Validation Link</h3>
-<div class="outline-text-3" id="text-org08a58e3">
 <p>
-Org mode exports a HTML validation link by default. There does not seem to be a
-way to disable the link by using <code>#+options:</code> in the Org file. Add the following
-to the Emacs init file to disable the generated HTML validation link.
+The org-publish file disables many export elements.
+I like the default to be usable for small documents where these elements are excessive.
+They can be enabled selectively by tweaking an Org file's <code>#+options:</code> line.
+See <a href="https://orgmode.org/manual/Export-Settings.html">https://orgmode.org/manual/Export-Settings.html</a> for details.
 </p>
 
-<div class="org-src-container">
-<pre class="src src-emacs-lisp">;; HTML output: Don't emit validation link
-(setq org-html-validation-link nil)
-</pre>
-</div>
-</div>
+<p>
+Export an Org file to HTML with the command <code>M-x org-html-export-to-html</code>.
+</p>
 </div>
 </div>
 
@@ -279,9 +63,12 @@ to the Emacs init file to disable the generated HTML validation link.
 <h2 id="orgf1c33ed">CSS Modifications</h2>
 <div class="outline-text-2" id="text-orgf1c33ed">
 <p>
-Edit the file <a href="org.css">org.css</a> and update the file <code>inline.css.org</code> by running
-<code>make</code>. The <a href="https://yui.github.io/yuicompressor/">YUI Compressor</a> program is used to compress the CSS to reduce the
-size of exported HTML files.
+Edit the CSS files according to taste.
+Build using the <code>Makefile</code>.
+</p>
+
+<p>
+The <a href="https://yui.github.io/yuicompressor/">YUI Compressor</a> program is used to compress the CSS to reduce their size.
 </p>
 
 <p>
@@ -332,8 +119,7 @@ The license file <a href="fonts/Inconsolata/OFL.txt">fonts/Inconsolata/OFL.txt</
 <h2 id="org3276e1b">Style Demonstration</h2>
 <div class="outline-text-2" id="text-org3276e1b">
 <p>
-A style demonstration of typographical elements not already employed by this
-document.
+A style demonstration of typographical elements not already employed by this document.
 </p>
 </div>
 
@@ -342,9 +128,9 @@ document.
 <div class="outline-text-3" id="text-org34f6b44">
 <blockquote>
 <p>
-At 19.00 hours, ship's time, I made my way to the launching bay. The men around
-the shaft stood aside to let me pass, and I climbed down into the capsule. <i>&#x2013;
-Opening of the book Solaris by Stanislaw Lem</i>
+At 19.00 hours, ship's time, I made my way to the launching bay.
+The men around the shaft stood aside to let me pass, and I climbed down into the capsule.
+<i>&#x2013; Opening of the book Solaris by Stanislaw Lem</i>
 </p>
 </blockquote>
 </div>
@@ -473,7 +259,7 @@ research center by Ken Thompson, Dennis Ritchie, and others in the 1970s.</dd>
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="date">Date: 2022-11-24</p>
+<p class="date">Date: 2022-12-07</p>
 </div>
 </body>
 </html>
