@@ -46,8 +46,7 @@ Example (Debian based Linux):
 
 This work is a derivative of https://github.com/gongzhitaao/orgcss.
 
-The license files [[file:LICENSE.MIT][LICENSE.MIT]] and [[file:LICENSE.996][LICENSE.996ICU]] applies to =org.css=
-and the derivative file =inline.css.org=.
+The license files [[file:LICENSE.MIT][LICENSE.MIT]] and [[file:LICENSE.996][LICENSE.996ICU]] applies to files =org-*.css= and =org-*.css.el=.
 
 The license file [[file:LICENSE.MIT][LICENSE.MIT]] applies to the remaining sources in the root
 directory of this source distribution.
